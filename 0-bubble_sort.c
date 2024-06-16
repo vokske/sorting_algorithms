@@ -26,5 +26,4 @@ void bubble_sort(int *array, size_t size)
 		if (swap_flag == 0)
 			break;
 	}
-	print_array(array, size);
 }
