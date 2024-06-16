@@ -20,8 +20,8 @@ void bubble_sort(int *array, size_t size)
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
 				swap_flag = 1;
+				print_array(array, size);
 			}
-			print_array(array, size);
 		}
 		if (swap_flag == 0)
 			break;
