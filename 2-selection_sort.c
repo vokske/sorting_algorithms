@@ -10,16 +10,15 @@
 
 void selection_sort(int *array, size_t size)
 {
-	int start_point, smallest_num, smallest_index, temp;
-	unsigned long int i, j;
+	int smallest_num, temp;
+	unsigned long int i, j, smallest_index;
 
 	for (i = 0; i < size - 1; i++)
 	{
-		start_point = i;
-		smallest_num = array[start_point];
-		smallest_index = start_point;
+		smallest_num = array[i];
+		smallest_index = i;
 
-		for (j = start_point; j < size; j++)
+		for (j = i; j < size; j++)
 		{
 			if (smallest_num > array[j])
 			{
@@ -27,10 +26,12 @@ void selection_sort(int *array, size_t size)
 				smallest_index = j;
 			}
 		}
-		temp = array[start_point];
-		array[start_point] = array[smallest_index];
-		array[smallest_index] = temp;
-		start_point++;
-		print_array(array, size);
+		if (smallest_index != i)
+		{
+			temp = array[i];
+			array[i] = array[smallest_index];
+			array[smallest_index] = temp;
+			print_array(array, size);
+		}
 	}
 }
