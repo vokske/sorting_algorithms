@@ -13,6 +13,9 @@ void selection_sort(int *array, size_t size)
 	int smallest_num, temp;
 	unsigned long int i, j, smallest_index;
 
+	if (array == NULL)
+		return;
+
 	for (i = 0; i < size - 1; i++)
 	{
 		smallest_num = array[i];
