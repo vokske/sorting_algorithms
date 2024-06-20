@@ -43,6 +43,7 @@ void quick_sort(int *array, size_t size)
  * @array: Array to be sorted
  * @start: The beginning of the array
  * @end: The end of the array
+ * @orig_size: Size of the original array
  */
 
 void sort_subarray(int *array, size_t start, size_t end, size_t orig_size)
@@ -68,6 +69,7 @@ void sort_subarray(int *array, size_t start, size_t end, size_t orig_size)
  * @array: The array to be sorted
  * @start: Beginning of @array
  * @end: End of @array
+ * @orig_size: Size of the original array
  *
  * Return: Index of the pivot element
  */
@@ -75,7 +77,7 @@ void sort_subarray(int *array, size_t start, size_t end, size_t orig_size)
 int partition_array(int *array, size_t start, size_t end, size_t orig_size)
 {
 	int pivot, temp;
-	long unsigned int i, j;
+	unsigned long int i, j;
 
 	pivot = array[end];
 	i = start - 1;
