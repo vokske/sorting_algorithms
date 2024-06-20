@@ -9,10 +9,31 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size > 1)
+	int same_elements;
+	size_t i;
+
+	if (size <= 1)
 	{
-		sort_subarray(array, 0, size - 1, size);
+		print_array(array, size);
+		return;
 	}
+	same_elements = 1;
+
+	for (i = 1; i < size; i++)
+	{
+		if (array[i] != array[0])
+		{
+			same_elements = 0;
+			break;
+		}
+	}
+
+	if (same_elements)
+	{
+		print_array(array, size);
+		return;
+	}
+	sort_subarray(array, 0, size - 1, size);
 }
 
 /**
